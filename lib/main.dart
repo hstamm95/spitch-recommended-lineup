@@ -36,6 +36,7 @@ class Spitch extends StatelessWidget {
         primarySwatch: createMaterialColor(const Color(0xFF33BA49)),
       ),
       home: const RecommendedLineup(title: 'Recommended Lineup'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
