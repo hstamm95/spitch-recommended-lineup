@@ -113,6 +113,7 @@ class PlayerList extends StatelessWidget {
       }
     }
 
+    players.sort(((a, b) => b.avgScore.compareTo(a.avgScore)));
     goalkeepers.sort(((a, b) => b.avgScore.compareTo(a.avgScore)));
     defender.sort(((a, b) => b.avgScore.compareTo(a.avgScore)));
     midfielder.sort(((a, b) => b.avgScore.compareTo(a.avgScore)));
@@ -149,9 +150,11 @@ class PlayerList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  '${lineup[index].firstName} ${lineup[index].lastName}',
-                ),
+                players[0].id == lineup[index].id
+                    ? Text(
+                        '${lineup[index].firstName} ${lineup[index].lastName} ©')
+                    : Text(
+                        '${lineup[index].firstName} ${lineup[index].lastName}'),
                 Text(lineup[index].avgScore.toString()),
               ],
             ),
